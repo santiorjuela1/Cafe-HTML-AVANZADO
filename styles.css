@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@300;400;500;700&display=swap'); 
+/* Importa las fuentes 'Nunito' y 'Roboto' desde Google Fonts */
+
+:root{
+    --main-color:#d3ad7f; /* Color principal */
+    --black:#13131a; /* Color negro */
+    --bg:#010103; /* Color de fondo */
+    --border:.1rem solid rgba(255,255,255,.3); /* Estilo de borde */
+}
+
+*{
+    font-family: "Roboto", sans-serif; /* Fuente predeterminada */
+    margin:0; padding: 0; /* Elimina márgenes y rellenos predeterminados */
+    box-sizing: border-box; /* Incluye bordes y rellenos en el tamaño total del elemento */
+    outline: none; border: none; /* Elimina contornos y bordes */
+    text-decoration: none; /* Elimina subrayados en textos */
+    text-transform: capitalize; /* Capitaliza el texto */
+    transition: .2s linear; /* Transición suave de 0.2s */
+}
+
+html{
+    font-size: 62.5%; /* Tamaño de fuente base 62.5% (1rem = 10px) */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+    scroll-padding-top: 9rem; /* Padding superior para el scroll */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+html::-webkit-scrollbar{
+    width: .8rem; /* Ancho de la barra de desplazamiento */
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent; /* Fondo de la pista de la barra de desplazamiento */
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 5rem; /* Bordes redondeados del pulgar */
+}
+
+body{
+    background: var(--bg); /* Color de fondo del cuerpo */
+}
+
+section{
+    padding: 2rem 7%; /* Relleno de las secciones */
+}
+
+.heading{
+    text-align: center; /* Alineación centrada del texto */
+    color: #fff; /* Color de texto blanco */
+    padding-bottom: 3.5rem; /* Relleno inferior */
+    font-size: 4rem; /* Tamaño de fuente grande */
+}
+
+.heading span{
+    color:var(--main-color); /* Color del span */
+}
+
+.btn{
+    margin-top: 1rem; /* Margen superior */
+    display: inline-block; /* Elemento en línea */
+    padding: .7rem 3rem; /* Relleno del botón */
+    font-size: 1.7rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    background: var(--main-color); /* Fondo del botón */
+    cursor: pointer; /* Cursor de puntero */
+}
+
+.btn:hover{
+    letter-spacing: 0.2rem; /* Espaciado de letras en hover */
+}
+
+.header{
+    background: var(--bg); /* Fondo del header */
+    display: flex; /* Flexbox */
+    align-items: center; /* Alineación de elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    padding:1.5rem 7%; /* Relleno del header */
+    border-bottom: var(--border); /* Borde inferior */
+    position: fixed; /* Posición fija */
+    top: 0; left: 0; right: 0; /* Posición del header */
+    z-index: 100; /* Índice de apilamiento */
+}
+
+.header .logo img {
+    width: 125px; /* Ancho de la imagen del logo */
+    height: auto; /* Altura automática */
+}
+
+.header .navbar a{
+    margin: 0 1rem; /* Márgenes laterales */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    color:#fff; /* Color del texto */
+}
+
+.header .navbar a:hover{
+    color:var(--main-color); /* Color del texto en hover */
+    border-bottom: .1rem solid var(--main-color); /* Borde inferior en hover */
+    padding-bottom: .5rem; /* Relleno inferior en hover */
+}
+
+.header .icons div{
+    color: #fff; /* Color del icono */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 2.5rem; /* Tamaño del icono */
+    margin-left: 2rem; /* Margen izquierdo */
+}
+
+.header .icons div:hover{
+    color: var(--main-color); /* Color del icono en hover */
+}
+
+#menu-btn{
+    display: none; /* Oculta el botón del menú */
+}
+
+.header .search-form{
+    position: absolute; /* Posición absoluta */
+    top: 115%; right: 7%; /* Posición del formulario */
+    background: #fff; /* Fondo blanco */
+    width: 50rem; /* Ancho del formulario */
+    height: 5rem; /* Altura del formulario */
+    display: flex; /* Flexbox */
+    align-items: center; /* Alineación de elementos */
+    transform: scaleY(0); /* Escala inicial 0 (oculto) */
+    transform-origin: top; /* Origen de la transformación */
+}
+
+.header .search-form.active{
+    transform: scaleY(1); /* Escala al mostrar */
+}
+
+.header .search-form input{
+    height: 100%; /* Altura del input */
+    width: 100%; /* Ancho del input */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    color: var(--black); /* Color del texto */
+    padding: 1rem; /* Relleno del input */
+    text-transform: none; /* No capitalizar texto */
+}
+
+.header .search-form label{
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 2.2rem; /* Tamaño de fuente */
+    margin-right: 1.5rem; /* Margen derecho */
+    color: var(--black); /* Color del texto */
+}
+
+.header .search-form label:hover{
+    color: var(--main-color); /* Color del texto en hover */
+}
+
+.header .cart-items-container{
+    position: absolute; /* Posición absoluta */
+    top: 100%; right: -100%; /* Posición inicial (fuera de pantalla) */
+    height: calc(100vh - 9.5rem); /* Altura del contenedor */
+    width: 35rem; /* Ancho del contenedor */
+    background: #fff; /* Fondo blanco */
+    padding:0 1.5rem; /* Relleno lateral */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra del contenedor */
+}
+
+.header .cart-items-container.active{
+    right: 0; /* Posición al activar (mostrar) */
+}
+
+.header .cart-items-container .cart-item{
+    position: relative; /* Posición relativa */
+    margin:2rem 0; /* Márgenes verticales */
+    display: flex; /* Flexbox */
+    align-items:center; /* Alineación de elementos */
+    gap:1.5rem; /* Espacio entre elementos */
+    border-bottom: 1px solid #eaeaea; /* Línea divisoria inferior */
+    padding-bottom: 1rem; /* Relleno inferior */
+}
+
+.header .cart-items-container .cart-item:last-child {
+    border-bottom: none; /* Quitar la línea del último item */
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position: absolute; /* Posición absoluta */
+    top:0.5rem; right: 0.5rem; /* Posición del icono */
+    font-size: 2rem; /* Tamaño del icono */
+    cursor: pointer; /* Cursor de puntero */
+    color: var(--black); /* Color del icono */
+    transition: color 0.3s; /* Transición de color suave */
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color: var(--main-color); /* Color del icono en hover */
+}
+
+.header .cart-items-container .cart-item img{
+    max-width: 45%; /* Ancho máximo de la imagen */
+    height: auto; /* Altura automática */
+    margin-right: 15px; /* Margen derecho */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra para las imágenes */
+    transition: transform 0.3s; /* Transición de escala en hover */
+}
+
+.header .cart-items-container .cart-item img:hover {
+    transform: scale(1.05); /* Escala en hover */
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 1.2rem; /* Tamaño de fuente */
+    color: var(--black); /* Color del texto */
+    padding-bottom: 0.5rem; /* Relleno inferior */
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--main-color); /* Color del precio */
+}
+
+.header .cart-items-container .btn{
+
+
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Alineación centrada del texto */
+}
+
+.home{
+    min-height: 100vh; /* Altura mínima 100% del viewport */
+    display: flex; /* Flexbox */
+    align-items: center; /* Alineación de elementos */
+    background:url(../Imagenes/Home.jpeg) no-repeat; /* Imagen de fondo */
+    background-size: cover; /* Cubrir el contenedor */
+    background-position: center; /* Posición centrada */
+}
+
+.home .content{
+    max-width: 60rem; /* Ancho máximo del contenido */
+}
+
+.home .content h3{
+    font-size: 6rem; /* Tamaño de fuente */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    color: #fff; /* Color del texto */
+}
+
+.home .content p{
+    font-size: 2rem; /* Tamaño de fuente */
+    font-weight: lighter; /* Peso de fuente más ligero */
+    line-height: 1.8; /* Altura de línea */
+    padding: 1rem 0; /* Relleno vertical */
+    color: #eee; /* Color del texto */
+}
+
+.about .row{
+    display: flex; /* Flexbox */
+    align-items: center; /* Alineación de elementos */
+    background:var(--black); /* Fondo negro */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+.about .row .image{
+    flex: 1 1 45rem; /* Flex para la imagen */
+}
+
+.about .row .image img{
+    width: 100%; /* Ancho completo */
+}
+
+.about .row .content{
+    flex: 1 1 45rem; /* Flex para el contenido */
+    padding: 2rem; /* Relleno del contenido */
+}
+
+.about .row .content h3{
+    font-size: 3rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+}
+
+.about .row .content p{
+    font-size: 1.6rem; /* Tamaño de fuente */
+    color: #ccc; /* Color del texto */
+    padding: 1rem 0; /* Relleno vertical */
+    line-height: 1.8; /* Altura de línea */
+}
+
+.menu .box-container{
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)); /* Columnas ajustables */
+    gap: 1.5rem; /* Espacio entre cajas */
+}
+
+.menu .box-container .box{
+    padding: 5rem; /* Relleno de la caja */
+    text-align: center; /* Alineación centrada del texto */
+    border: var(--border); /* Borde de la caja */
+}
+
+.menu .box-container .box img{
+    height: 10rem; /* Altura de la imagen */
+}
+
+.menu .box-container .box h3{
+    color: #fff; /* Color del texto */
+    font-size: 2rem; /* Tamaño de fuente */
+    padding: 1rem 0; /* Relleno vertical */
+}
+
+.menu .box-container .box .price{
+    color: #fff; /* Color del precio */
+    font-size: 2.5rem; /* Tamaño de fuente */
+    padding: 2rem 0; /* Relleno vertical */
+}
+
+.menu .box-container .box .price span{
+    font-size: 1.5rem; /* Tamaño de fuente del precio anterior */
+    text-decoration: line-through; /* Texto tachado */
+    font-weight: lighter; /* Peso de fuente más ligero */
+}
+
+.menu .box-container .box:hover{
+    background: #fff; /* Fondo blanco al hacer hover */
+}
+
+.menu .box-container .box:hover > *{
+    background: var(--black); /* Fondo negro de los elementos internos en hover */
+}
+
+.products .box-container{
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)); /* Columnas ajustables */
+    gap: 1.5rem; /* Espacio entre cajas */
+}
+
+.products .box-container .box{
+    text-align: center; /* Alineación centrada del texto */
+    border: var(--border); /* Borde de la caja */
+    padding: 2rem; /* Relleno de la caja */
+}
+
+.products .box-container .box .icons a{
+    height: 5rem; /* Altura del icono */
+    width: 5rem; /* Ancho del icono */
+    line-height: 5rem; /* Altura de línea */
+    font-size: 2rem; /* Tamaño de fuente */
+    border: var(--border); /* Borde del icono */
+    color: #fff; /* Color del icono */
+    margin: .3rem; /* Margen del icono */
+}
+
+.products .box-container .box .icons a:hover{
+    background: var(--main-color); /* Fondo del icono en hover */
+}
+
+.products .box-container .box .image{
+    padding: 2.5rem 0; /* Relleno de la imagen */
+}
+
+.products .box-container .box .image img{
+    height: 30rem; /* Altura de la imagen */
+}
+
+.products .box-container .box .content h3{
+    color: #fff; /* Color del texto */
+    font-size: 2.5rem; /* Tamaño de fuente */
+}
+
+.products .box-container .box .content .stars{
+    padding: 1.5rem; /* Relleno de las estrellas */
+}
+
+.products .box-container .box .content .stars i{
+    font-size: 1.7rem; /* Tamaño de las estrellas */
+    color: var(--main-color); /* Color de las estrellas */
+}
+
+.products .box-container .box .content .price{
+    color: #fff; /* Color del precio */
+    font-size: 2.5rem; /* Tamaño de fuente */
+}
+
+.products .box-container .box .content .price span{
+    text-decoration: line-through; /* Precio anterior tachado */
+    font-weight: lighter; /* Peso de fuente más ligero */
+    font-size: 1.5rem; /* Tamaño de fuente del precio anterior */
+}
+
+.review .box-container{
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)); /* Columnas ajustables */
+    gap: 1.5rem; /* Espacio entre cajas */
+}
+
+.review .box-container .box{
+    border: var(--border); /* Borde de la caja */
+    text-align: center; /* Alineación centrada del texto */
+    padding: 3rem 2rem; /* Relleno de la caja */
+}
+
+.review .box-container .box p{
+    font-size: 1.5rem; /* Tamaño de fuente */
+    line-height: 1.8; /* Altura de línea */
+    color: #ccc; /* Color del texto */
+    padding: 2rem 0; /* Relleno vertical */
+}
+
+.review .box-container .box .user{
+    height: 7rem; /* Altura del avatar */
+    width: 7rem; /* Ancho del avatar */
+    border-radius: 50%; /* Bordes redondeados */
+    object-fit: cover; /* Ajuste del avatar */
+}
+
+.review .box-container .box h3{
+    padding: 1rem 0; /* Relleno vertical */
+    font-size: 2rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+}
+
+.box .quote{
+    width: 50px; /* Ancho del icono de cita */
+    height: auto; /* Altura automática */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.review .box-container .box .stars i{
+    font-size: 1.5rem; /* Tamaño de las estrellas */
+    color: var(--main-color); /* Color de las estrellas */
+}
+
+.contact .row{
+    display: flex; /* Flexbox */
+    background:var(--black); /* Fondo negro */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+.contact .row .map{
+    flex: 1 1 45rem; /* Flex para el mapa */
+    width: 100%; /* Ancho completo */
+    object-fit: cover; /* Ajuste del mapa */
+}
+
+.contact .row form{
+    flex: 1 1 45rem; /* Flex para el formulario */
+    padding: 5rem 2rem; /* Relleno del formulario */
+    text-align: center; /* Alineación centrada del texto */
+}
+
+.contact .row form h3{
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 3.5rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+}
+
+.contact .row form .inputBox{
+    display: flex; /* Flexbox */
+    align-items: center; /* Alineación de elementos */
+    margin-top: 2rem; /* Margen superior */
+    margin-bottom: 2rem; /* Margen inferior */
+    background: var(--bg); /* Fondo */
+    border: var(--border); /* Borde */
+}
+
+.contact .row form .inputBox span{
+    color: #fff; /* Color del texto */
+    font-size: 2rem; /* Tamaño de fuente */
+    padding-left: 2rem; /* Relleno izquierdo */
+}
+
+.contact .row form .inputBox input{
+    width: 
+
+100%; /* Ancho completo */
+    padding: 2rem; /* Relleno */
+    font-size: 1.7rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    text-transform: none; /* Sin transformación de texto */
+    background: none; /* Sin fondo */
+}
+
+.blogs .box-container{
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)); /* Columnas ajustables */
+    gap: 1.5rem; /* Espacio entre cajas */
+}
+
+.blogs .box-container .box{
+    border: var(--border); /* Borde de la caja */
+}
+
+.blogs .box-container .box .image{
+    height: 35rem; /* Altura de la imagen */
+    overflow: hidden; /* Ocultar desbordamiento */
+    width: 100%; /* Ancho completo */
+}
+
+.blogs .box-container .box .image img{
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Ajuste de la imagen */
+    width: 100%; /* Ancho completo */
+}
+
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2); /* Escalar imagen en hover */
+}
+
+.blogs .box-container .box .content{
+    padding: 2rem; /* Relleno del contenido */
+}
+
+.blogs .box-container .box .content .title{
+    font-size: 2.5rem; /* Tamaño de fuente */
+    line-height: 1.5; /* Altura de línea */
+    color: #fff; /* Color del texto */
+}
+
+.blogs .box-container .box .content .title:hover{
+    color: var(--main-color); /* Color del texto en hover */
+}
+
+.blogs .box-container .box .content span{
+    color: var(--main-color); /* Color del texto */
+    display: block; /* Mostrar como bloque */
+    padding-top: 1rem; /* Relleno superior */
+    font-size: 2rem; /* Tamaño de fuente */
+}
+
+.blogs .box-container .box .content p{
+    font-size: 1.6rem; /* Tamaño de fuente */
+    line-height: 1.8; /* Altura de línea */
+    color: #ccc; /* Color del texto */
+    padding: 1rem 0; /* Relleno vertical */
+}
+
+.footer{
+    background: var(--black); /* Fondo negro */
+    text-align: center; /* Alineación centrada del texto */
+}
+
+.footer .share{
+    padding: 1rem 0; /* Relleno vertical */
+}
+
+.footer .share a{
+    height: 5rem; /* Altura del icono */
+    width: 5rem; /* Ancho del icono */
+    line-height: 5rem; /* Altura de línea */
+    font-size: 2rem; /* Tamaño de fuente */
+    color: #fff; /* Color del icono */
+    border: var(--border); /* Borde del icono */
+    margin: .3rem; /* Margen del icono */
+    border-radius: 50%; /* Bordes redondeados */
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color); /* Fondo del icono en hover */
+}
+
+.footer .links{
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centrar elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    padding: 2rem 0; /* Relleno vertical */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+.footer .links a{
+    padding: 1rem 2rem; /* Relleno */
+    color: #fff; /* Color del texto */
+    border: var(--border); /* Borde del enlace */
+    font-size: 2rem; /* Tamaño de fuente */
+}
+
+.footer .links a:hover{
+    background-color: var(--main-color); /* Fondo del enlace en hover */
+}
+
+.footer .credit{
+    font-size: 2rem; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    font-weight: lighter; /* Peso de fuente más ligero */
+    padding: 1.5rem; /* Relleno */
+}
+
+.footer .credit span{
+    color: var(--main-color); /* Color del texto */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries para diseño responsivo */
+@media(max-width:991px){
+
+    html{
+        font-size: 55%; /* Tamaño de fuente reducido */
+    }
+
+    .header{
+        padding: 1.5rem 2rem; /* Relleno del encabezado */
+    }
+
+    section{
+        padding: 2rem; /* Relleno de las secciones */
+    }
+}
+
+@media(max-width:768px){
+
+    #menu-btn{
+        display: inline-block; /* Mostrar botón de menú */
+    }
+
+    .header .navbar{
+        position: absolute; /* Posición absoluta */
+        top: 100%; right: -100%; /* Fuera de la pantalla */
+        background: #fff; /* Fondo blanco */
+        width: 30rem; /* Ancho del navbar */
+        height: calc(100vh - 9.5rem); /* Altura del navbar */
+    }
+
+    .header .navbar.active{
+        right: 0; /* Mostrar navbar */
+    }
+
+    .header .navbar a{
+        color: var(--black); /* Color del enlace */
+        display: block; /* Mostrar como bloque */
+        margin: 1.5rem; /* Margen */
+        padding: .5rem; /* Relleno */
+        font-size: 2rem; /* Tamaño de fuente */
+    }
+
+    .header .search-form{
+        width: 90%; /* Ancho del formulario */
+        right: 2rem; /* Margen derecho */
+    }
+
+    .home{
+        background-position: left; /* Posición de fondo */
+        justify-content: center; /* Centrar contenido */
+        text-align: center; /* Alineación centrada del texto */
+    }
+
+    .home .content h3{
+        font-size: 4.5rem; /* Tamaño de fuente */
+    }
+
+    .home .content p{
+        font-size: 1.5rem; /* Tamaño de fuente */
+    }
+}
+
+@media(max-width:450px){
+
+    html{
+        font-size: 55%; /* Tamaño de fuente reducido */
+    }
+}
