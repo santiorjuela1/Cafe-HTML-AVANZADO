@@ -228,7 +228,7 @@ section{
     min-height: 100vh; /* Altura mínima 100% del viewport */
     display: flex; /* Flexbox */
     align-items: center; /* Alineación de elementos */
-    background:url(../Imagenes/Home.jpeg) no-repeat; /* Imagen de fondo */
+    background:url(../Cafe-HTML-AVANZADO/Imagenes/Home.jpeg) no-repeat; /* Imagen de fondo */
     background-size: cover; /* Cubrir el contenedor */
     background-position: center; /* Posición centrada */
 }
