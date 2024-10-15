@@ -32,11 +32,15 @@
         <a href="D:\ANDREA\Documents\CoffeeCreamWeb\Cafe-HTML-AVANZADO\Indice.html">volver a inicio</a>
         </nav>
 
-    <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fas fa-bars" id="menu-btn"></div>
-    </div>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn">
+                <!-- Span for showing the number of items in the cart -->
+                <span id="cart-count">0</span>
+            </div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        
 
 <div class="search-form">
     <input type="search" id="search-box" placeholder="search here...">
@@ -137,44 +141,44 @@
 
         <div class="box">
             <img src="Imagenes/Cafe1.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Capuchino</h3>
+            <div class="price">$4500<span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(1)">Agregar al carrito de compra</a>
         </div>
 
         <div class="box">
             <img src="Imagenes/Cafe2.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Mocca</h3>
+            <div class="price">$5000 <span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(2)">Agregar al carrito de compra</a>
         </div>
 
         <div class="box">
             <img src="Imagenes/Cafe3.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Americano</h3>
+            <div class="price">$6000 <span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(3)">Agregar al carrito de compra</a>
         </div>
 
         <div class="box">
             <img src="Imagenes/Cafe4.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Espreso</h3>
+            <div class="price">$5500 <span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(4)">Agregar al carrito de compra</a>
         </div>
 
         <div class="box">
             <img src="Imagenes/Cafe5.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Capuccino</h3>
+            <div class="price">$6000 <span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(5)">Agregar al carrito de compra</a>
         </div>
 
         <div class="box">
             <img src="Imagenes/Cafe6.jpeg" alt="">
-            <h3>Rincones Aromáticos</h3>
-            <div class="price">$7.300 <span>8.000</span></div>
-            <a href="#" class="btn">Agregar al carrito de compra</a>
+            <h3>Bombon</h3>
+            <div class="price">$7000 <span>8.000</span></div>
+            <a href="#" class="btn" onclick="addToCart(6)">Agregar al carrito de compra</a>
         </div>
 
     </div>
