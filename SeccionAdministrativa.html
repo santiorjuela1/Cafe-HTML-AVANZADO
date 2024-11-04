@@ -3,35 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffee Cream</title>
+  <title>Coffee Cream - Administración</title>
 
-  <!--Font awesome cdn link-->
+  <!-- Font awesome cdn link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
-  <!--custom css file link-->
+  <!-- Custom css file link -->
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
-<!--header section starts-->
+<!-- Header section starts -->
 <header class="header">
-
-    <a href="#" class="logo">
-        <img src="Imagenes/Coffee Cream.jpeg" alt="">
-        </a>
+  <a href="#" class="logo">
+      <img src="Imagenes/Coffee Cream.jpeg" alt="Logo de Coffee Cream">
+  </a>
 </header>
 
+<!-- Home section starts -->
 <section class="home" id="home">
-    <div class="content">
-        <h3>Seccion Administrativa</h3>
-        <p>Home</p>
-        <a href="D:\ANDREA\Documents\CoffeeCreamWeb\Cafe-HTML-AVANZADO\Indice.html" class="btn">Volver a Inicio</a>
-        </div>
+  <div class="content">
+      <h3>Sección Administrativa</h3>
+      <p>Gestión de Compras y Facturas</p>
+      <a href="D:\ANDREA\Documents\CoffeeCreamWeb\Cafe-HTML-AVANZADO\Indice.html" class="btn">Volver a Inicio</a>
+  </div>
+</section>
+
+<!-- Administrative section starts -->
+<section class="administrative" id="administrative">
+  <div class="content">
+      <h3>Compras y Facturas</h3>
+      <table class="purchase-table">
+          <thead>
+              <tr>
+                  <th>ID de Compra</th>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Fecha de Compra</th>
+                  <th>Total</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Ejemplo de datos;
+              <tr>
+                  <td>001</td>
+                  <td>Café Orgánico</td>
+                  <td>2</td>
+                  <td>$20.000</td>
+                  <td>2024-11-04</td>
+                  <td>$40.000</td>
+              </tr>
+              <tr>
+                  <td>002</td>
+                  <td>Café Gourmet</td>
+                  <td>1</td>
+                  <td>$35.000</td>
+                  <td>2024-11-03</td>
+                  <td>$35.000</td>
+              </tr>
+              <!-- Más filas según sea necesario -->
+          </tbody>
+      </table>
+  </div>
 </section>
 
 <script src="script.js"></script>
 
-    </body>
-    </html>
-    
+</body>
+</html>
