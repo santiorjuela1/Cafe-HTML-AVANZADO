@@ -41,7 +41,7 @@ const arrayCafes = [
     {"id": 3, "nombre": "americano", "descripcion": "cafe sin leche", "precio" : 6000},
     {"id": 4, "nombre": "espreso", "descripcion": "cafe con leche", "precio" : 5500},
     {"id": 5, "nombre": "capuccino", "descripcion": "cafe con leche", "precio" : 6000},
-    {"id": 6, "nombre": "bombon", "descripcion": "cafe con leche", "precio" : 7000},
+    {"id": 6, "nombre": "bombon", "descripcion": "cafe con leche", "precio" : 7000}
 ];
 
 let total = 0;
