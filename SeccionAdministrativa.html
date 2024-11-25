@@ -1,74 +1,112 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffee Cream - Administración</title>
-
-  <!-- Font awesome cdn link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  
-  <!-- Custom css file link -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
 </head>
 <body>
 
-<!-- Header section starts -->
 <header class="header">
-  <a href="#" class="logo">
-      <img src="Imagenes/Coffee Cream.jpeg" alt="Logo de Coffee Cream">
-  </a>
+    <a href="#" class="logo"><img src="logo.png" alt="Logo"></a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#products">Products</a>
+    </nav>
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <div id="cart-btn" class="fas fa-shopping-cart"></div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+    <form class="search-form">
+        <input type="text" placeholder="Search...">
+        <label class="fas fa-search"></label>
+    </form>
+    <div class="cart-items-container">
+        <div class="cart-item">
+            <img src="product.jpg" alt="Product">
+            <div class="content">
+                <h3>Product Name</h3>
+                <span class="price">$9.99</span>
+            </div>
+            <i class="fas fa-times"></i>
+        </div>
+        <button class="btn">Checkout</button>
+    </div>
 </header>
 
-<!-- Home section starts -->
 <section class="home" id="home">
-  <div class="content">
-      <h3>Sección Administrativa</h3>
-      <p>Gestión de Compras y Facturas</p>
-      <a href="Indice.html" class="btn">Volver a Inicio</a>
-  </div>
+    <div class="content">
+        <h3>Welcome to Our Coffee Shop</h3>
+        <p>Discover the best coffee and products crafted with love.</p>
+        <a href="#" class="btn">Order Now</a>
+    </div>
 </section>
 
-<!-- Administrative section starts -->
-<section class="administrative" id="administrative">
-  <div class="content">
-      <h3>Compras y Facturas</h3>
-      <table class="purchase-table">
-          <thead>
-              <tr>
-                  <th>ID de Compra</th>
-                  <th>Producto</th>
-                  <th>Cantidad</th>
-                  <th>Precio</th>
-                  <th>Fecha de Compra</th>
-                  <th>Total</th>
-              </tr>
-          </thead>
-          <tbody>
-              <!-- Ejemplo de datos;
-              <tr>
-                  <td>001</td>
-                  <td>Café Orgánico</td>
-                  <td>2</td>
-                  <td>$20.000</td>
-                  <td>2024-11-04</td>
-                  <td>$40.000</td>
-              </tr>
-              <tr>
-                  <td>002</td>
-                  <td>Café Gourmet</td>
-                  <td>1</td>
-                  <td>$35.000</td>
-                  <td>2024-11-03</td>
-                  <td>$35.000</td>
-              </tr>
-              <!-- Más filas según sea necesario -->
-          </tbody>
-      </table>
-  </div>
+<section class="about" id="about">
+    <div class="row">
+        <div class="image">
+            <img src="about.jpg" alt="About Image">
+        </div>
+        <div class="content">
+            <h3>About Us</h3>
+            <p>We provide the finest coffee in the region, with a unique selection of blends and a warm atmosphere.</p>
+        </div>
+    </div>
 </section>
 
-<script src="script.js"></script>
+<section class="menu" id="menu">
+    <h2 class="heading">Our <span>Menu</span></h2>
+    <div class="box-container">
+        <div class="box">
+            <img src="coffee1.jpg" alt="Coffee">
+            <h3>Espresso</h3>
+            <div class="price"><span>$3.99</span> $2.99</div>
+            <a href="#" class="btn">Order Now</a>
+        </div>
+        <div class="box">
+            <img src="coffee2.jpg" alt="Coffee">
+            <h3>Latte</h3>
+            <div class="price"><span>$4.99</span> $3.99</div>
+            <a href="#" class="btn">Order Now</a>
+        </div>
+    </div>
+</section>
+
+<section class="products" id="products">
+    <h2 class="heading">Our <span>Products</span></h2>
+    <div class="box-container">
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="product1.jpg" alt="Product">
+            </div>
+            <div class="content">
+                <h3>Product Name</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">$24.99</div>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
